@@ -1,6 +1,5 @@
 whop
 ====
 
-Tumblr Starter Kit
-
-This should make life easier for me
+Tumblr Theme Starter Kit
+The easiest way to create an awesome Tumblr theme starts here.
