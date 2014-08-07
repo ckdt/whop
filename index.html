@@ -1,8 +1,15 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <!-- Set Character encoding to Unicode -->
         <meta charset="utf-8">
+
+        <!-- Set IE render engine -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <!-- Title ( optimized for SEO purposes ) display search results or page summary if applicable, always display page title -->
         <title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
@@ -38,9 +45,6 @@
         ########################################
         ## Tumblr Theme Customization Options ##
         ########################################
-
-        Note to self:
-        ## Test usage of Global Appearance
         -->
 
         <!-- options: Branding -->
@@ -63,11 +67,45 @@
 
         <!-- options: 3rd Party -->
         <meta name="text:Disqus Shortname" content="">
-        
-        <!-- Inline CSS -->
+
+        <!--
+        ########################################
+        ## Tumblr Theme Styling: CSS          ##
+        ########################################
+        -->
+
+        <!-- Include the link to the default style & structure of the theme -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Overwrite default style & structure with theme options -->
         <style type="text/css">
+
+            body{
+                font-family: {font:Body};
+                color: {color:Body Font};
+                background-color: {color:Background Body};
+            }
+
+            /* Add Custom CSS support */
             {CustomCSS}
         </style>
+
+        <!--
+        ########################################
+        ## Tumblr Theme Scripts: JS           ##
+        ########################################
+        -->
+
+        <!-- Include modernizr, this should become a custom build -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+
+        <!-- Notes to self:
+
+        # Test usage of Global Appearance Tumblr options
+        # Modernizr & Normalize fork?
+        # Grunt as build tool?
+        # Upload to server automatization
+        -->
     </head>
     <body>
         <h1>{Title}</h1>
