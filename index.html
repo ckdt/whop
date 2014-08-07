@@ -1,11 +1,73 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>{Title}</title>
-        <link rel="shortcut icon" href="{Favicon}">
-        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <!-- Set Character encoding to Unicode -->
+        <meta charset="utf-8">
+
+        <!-- Title ( optimized for SEO purposes ) display search results or page summary if applicable, always display page title -->
+        <title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+        <!-- Description, include MetaDescription if applicable -->
         {block:Description}
             <meta name="description" content="{MetaDescription}" />
         {/block:Description}
+
+        <!-- Themename and version in generator to track version -->
+        <meta name="generator" content="Whop! v0.0.1 – Tumblr Theme Starter">
+
+        <!-- Set initial scale to 1 on mobile devices -->
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <!-- Add Favicon -->
+        <link rel="shortcut icon" href="{Favicon}">
+
+        <!-- Add RSS link -->
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+        <!-- Include canonical & shortlink to improve linkbuilding on permanent links  -->
+        {block:PermalinkPage}
+        {block:Posts}
+        {block:Date}
+        <link rel="canonical" href="{Permalink}">
+        <link rel="shortlink" href="{ShortURL}">
+        {/block:Date}
+        {/block:Posts}
+        {/block:PermalinkPage}
+
+        <!--
+        ########################################
+        ## Tumblr Theme Customization Options ##
+        ########################################
+
+        Note to self:
+        ## Test usage of Global Appearance
+        -->
+
+        <!-- options: Branding -->
+        <meta name="image:Logo" content="http://" />
+
+        <!-- options: Typography -->
+        <meta name="font:Body" content="Arial, 'Helvetica Neue', Helvetica, sans-serif" />
+        <meta name="color:Body Font" content="#ffffff"/>
+        <meta name="if:Text Format Justify Paragraphs" content="1"/>
+
+        <!-- options: Background -->
+        <meta name="color:Background Body" content="#333333"/>
+
+        <!-- options: Links -->
+        <meta name="color:Link" content="#dddddd"/>
+        <meta name="color:Link Hover" content="#ffffff"/>
+
+        <!-- options: Layout -->
+        <meta name="if:Show people I follow" content="1"/>
+
+        <!-- options: 3rd Party -->
+        <meta name="text:Disqus Shortname" content="">
+        
+        <!-- Inline CSS -->
+        <style type="text/css">
+            {CustomCSS}
+        </style>
     </head>
     <body>
         <h1>{Title}</h1>
